@@ -14,6 +14,7 @@ import { NotificationsPage } from "./pages/NotificationsPage";
 import PaymentsPage from "./pages/PaymentsPage";
 import InvestmentDetailPage from "./pages/InvestmentDetailPage";
 import PurchaseFlowPage from "./pages/PurchaseFlowPage";
+import PaymentCallbackPage from "./pages/PaymentCallbackPage";
 import DocumentsPage from "./pages/DocumentsPage";
 import SettingsPage from "./pages/SettingsPage";
 
@@ -74,7 +75,7 @@ export default function App() {
             <Route path="investments" element={<InvestmentsPage />} />
             <Route path="investments/:id" element={<InvestmentDetailPage />} />
             <Route path="payments" element={<PaymentsPage />} />
-            <Route path="payments/callback" element={<PaymentsPage />} />
+            <Route path="payments/callback" element={<PaymentCallbackPage />} />
             <Route path="saved" element={<SavedPage />} />
             <Route path="documents" element={<DocumentsPage />} />
             <Route path="notifications" element={<NotificationsPage />} />

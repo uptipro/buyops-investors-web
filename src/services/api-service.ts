@@ -1,6 +1,6 @@
 import api from "./api";
 
-const BACKEND_URL = import.meta.env.VITE_API_URL?.replace("/api", "") ?? "https://buyops-backend-production-9b5d.up.railway.app";
+const BACKEND_URL = import.meta.env.VITE_API_URL?.replace("/api", "") ?? "https://buyops-backend-production.up.railway.app";
 
 /** Resolve a relative media path to an absolute URL */
 export const resolveMediaUrl = (url: string | null | undefined): string => {
@@ -45,7 +45,7 @@ export const paymentsApi = {
 // Documents (derived from invested assets)
 export const documentsApi = {
     getMyDocuments: async () => {
-        const investRes = await api.get("/investments/my");
+        const investRes = await api.get("/investments/me");
         const investments: any[] = investRes.data || [];
 
         const assetIds = [...new Set(investments.map((i: any) => i.assetId || i.asset?.id).filter(Boolean))];
@@ -111,6 +111,9 @@ export const investorApi = {
         getMyInvestments: () => api.get("/investments/me"),
         // GET /investments/summary
         getSummary: () => api.get("/investments/summary"),
+        // POST /investments — record a new investment after payment
+        create: (data: { amount: number; assetId: string; note?: string }) =>
+            api.post("/investments", data),
         // No /investments/:id endpoint — use getMyInvestments() and filter client-side
         getById: async (id: string) => {
             const res = await api.get("/investments/me");
