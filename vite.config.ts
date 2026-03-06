@@ -7,7 +7,7 @@ export default defineConfig({
         port: 5174,
         proxy: {
             "/api": {
-                target: "https://buyops-backend-production-9b5d.up.railway.app",
+                target: "https://buyops-backend-production.up.railway.app",
                 changeOrigin: true,
                 rewrite: (path) => path.replace(/^\/api/, ""),
             },

@@ -134,6 +134,17 @@ export default function PurchaseFlowPage() {
         res.data?.data?.authorizationUrl ??
         res.data?.data?.authorization_url;
       if (authUrl) {
+        // Persist context so the callback page can record the investment
+        sessionStorage.setItem(
+          `buyops_payment_${reference}`,
+          JSON.stringify({
+            assetId: asset.id,
+            assetName: asset.name,
+            amount: totalAmount,
+            provider,
+            purchaseType,
+          }),
+        );
         window.location.href = authUrl;
       } else {
         throw new Error("No payment URL returned from server.");

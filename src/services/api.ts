@@ -1,6 +1,6 @@
 import axios, { AxiosInstance, InternalAxiosRequestConfig } from "axios";
 
-export const API_URL = import.meta.env.VITE_API_URL || "https://buyops-backend-production-9b5d.up.railway.app";
+export const API_URL = import.meta.env.VITE_API_URL || "https://buyops-backend-production.up.railway.app";
 
 const api: AxiosInstance = axios.create({
     baseURL: API_URL,

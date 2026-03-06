@@ -27,8 +27,12 @@ export function SignupPage() {
       setError("Passwords do not match");
       return;
     }
-    if (form.password.length < 6) {
-      setError("Password must be at least 6 characters");
+    const strongPassword =
+      /^(?=.*[0-9])(?=.*[!@#$%^&*()_+\-=[\]{};':"\\|,.<>/?]).{8,}$/;
+    if (!strongPassword.test(form.password)) {
+      setError(
+        "Password must be at least 8 characters and include a number and a special character.",
+      );
       return;
     }
     setIsLoading(true);
