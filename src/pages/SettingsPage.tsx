@@ -5,7 +5,6 @@ import {
   Mail,
   Moon,
   Globe,
-  DollarSign,
   User,
   Lock,
   Shield,
@@ -14,8 +13,8 @@ import {
   HelpCircle,
   Info,
   ChevronRight,
-  Settings,
-} from "lucide-react";
+  Settings} from "lucide-react";
+import { NairaSign } from "../components/NairaSign";
 
 type ToggleProps = { checked: boolean; onChange: (v: boolean) => void };
 
@@ -235,7 +234,7 @@ export default function SettingsPage() {
           <SectionTitle>Preferences</SectionTitle>
           <Card>
             <RowSelect
-              icon={<DollarSign className="w-4 h-4 text-yellow-500" />}
+              icon={<NairaSign className="w-4 h-4 text-yellow-500" />}
               label="Currency"
               storageKey="settings_currency"
               options={[
