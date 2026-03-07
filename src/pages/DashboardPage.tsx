@@ -3,11 +3,10 @@ import { Link } from "react-router-dom";
 import {
   TrendingUp,
   Briefcase,
-  DollarSign,
   BarChart2,
   ArrowRight,
-  RefreshCw,
-} from "lucide-react";
+  RefreshCw} from "lucide-react";
+import { NairaSign } from "../components/NairaSign";
 import { useAuth } from "../contexts/AuthContext";
 import { investorApi } from "../services/api-service";
 
@@ -65,7 +64,7 @@ export function DashboardPage() {
     {
       label: "Portfolio Value",
       value: fmt(stats.portfolioValue),
-      icon: DollarSign,
+      icon: NairaSign,
       color: "text-primary bg-primary/10",
     },
     {

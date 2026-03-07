@@ -6,9 +6,8 @@ import {
   Calendar,
   TrendingUp,
   AlertCircle,
-  ExternalLink,
-  DollarSign,
-} from "lucide-react";
+  ExternalLink} from "lucide-react";
+import { NairaSign } from "../components/NairaSign";
 import { investorApi, resolveMediaUrl } from "../services/api-service";
 
 type Investment = {
@@ -306,7 +305,7 @@ export default function InvestmentDetailPage() {
             </div>
           </div>
           <div className="flex items-center gap-2 text-2xl font-bold text-slate-800">
-            <DollarSign className="w-6 h-6 text-green-500" />
+            <NairaSign className="w-6 h-6 text-green-500" />
             <span>—</span>
           </div>
           <p className="text-xs text-slate-400 mt-2">

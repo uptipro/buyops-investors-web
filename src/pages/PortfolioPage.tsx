@@ -2,10 +2,9 @@ import { useState, useEffect } from "react";
 import {
   TrendingUp,
   Briefcase,
-  DollarSign,
   BarChart2,
-  Loader2,
-} from "lucide-react";
+  Loader2} from "lucide-react";
+import { NairaSign } from "../components/NairaSign";
 import { investorApi } from "../services/api-service";
 
 const fmt = (n: number) =>
@@ -43,7 +42,7 @@ export function PortfolioPage() {
     {
       label: "Total Invested",
       value: fmt(totalInvested),
-      icon: DollarSign,
+      icon: NairaSign,
       color: "bg-primary/10 text-primary",
     },
     {
